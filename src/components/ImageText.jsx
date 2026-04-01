@@ -1,7 +1,10 @@
 import React from "react";
 import { imageTextData } from "../data/imageTextData";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ImageText = (props) => {
+  AOS.init();
   return (
     <section id="imgTextType" className="section">
       <h2 className="blind">{props.title}</h2>
@@ -19,8 +22,13 @@ const ImageText = (props) => {
           </ul>
         </div>
 
-        {imageTextData.recipes.map((recipe) => (
-          <div className={`imgText_img ${recipe.className}`} key={recipe.id}>
+        {imageTextData.recipes.map((recipe, index) => (
+          <div
+            className={`imgText_img ${recipe.className}`}
+            key={recipe.id}
+            data-aos="zoom-in"
+            data-aos-delay={index * 300}
+          >
             <a href="/" className={recipe.btnClass}>
               {recipe.text}
             </a>

@@ -1,7 +1,10 @@
 import React from "react";
 import { cardData } from "../data/cardData";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Card = ({ title, element }) => {
+  AOS.init();
   return (
     <section id="cardType" className="section">
       <h2>{title}</h2>
@@ -10,8 +13,13 @@ const Card = ({ title, element }) => {
         문화의 차별화된 제품과 서비스를 선보일 것입니다.
       </p>
       <div className="card_inner container">
-        {cardData.map((card) => (
-          <article className="card" key={card.id}>
+        {cardData.map((card, index) => (
+          <article
+            className="card"
+            key={card.id}
+            data-aos="flip-left"
+            data-aos-delay={index * 150}
+          >
             <figure className="card_header">
               <img src={card.img} alt={card.title} />
             </figure>
