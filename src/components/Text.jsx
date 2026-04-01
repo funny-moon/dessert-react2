@@ -19,6 +19,7 @@ const Text = (props) => {
         duration: 1,
         stagger: 0.2,
         ease: "power1.out",
+
         scrollTrigger: {
           trigger: textInnerRef.current,
           start: "top 80%",
