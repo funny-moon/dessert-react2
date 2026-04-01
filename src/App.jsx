@@ -9,10 +9,14 @@ import Text from "./components/Text";
 import Footer from "./components/Footer";
 
 import link from "./utils/link";
+import reveal from "./utils/reveal";
+import smooth from "./utils/smooth";
 
 const App = () => {
   useEffect(() => {
     link();
+    reveal();
+    smooth();
   });
 
   return (
