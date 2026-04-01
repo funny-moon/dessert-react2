@@ -1,11 +1,11 @@
 import React from "react";
 import { textData } from "../data/textData";
 
-const Text = () => {
+const Text = (props) => {
   return (
     <section id="textType" className="section">
       <span>텍스트 유형</span>
-      <h2>다체로운 베이커리 컬렉션</h2>
+      <h2>{props.title}</h2>
       <div className="text_inner container">
         {textData.map((text) => (
           <div className={`text ${text.className}`} key={text.id}>
